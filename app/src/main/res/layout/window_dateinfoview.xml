@@ -47,18 +47,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <com.example.datemanager.MatterView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:txtTopic="我的活動"
-                app:txtTime="08:00" />
-
-            <com.example.datemanager.MatterView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:txtTopic="另一個活動"
-                app:txtTime="11:00" />
-
         </LinearLayout>
     </com.example.datemanager.MyScrollView>
 
