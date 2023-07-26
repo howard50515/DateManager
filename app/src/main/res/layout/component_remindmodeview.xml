@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.RelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/generalModeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.datemanager.RemindInfoView
+            android:id="@+id/generalInfoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:txtLeft="離活動開始前"
+            app:txtRight="分鐘時" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/repeatModeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <com.example.datemanager.RemindInfoView
+            android:id="@+id/repeatInfoView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:txtLeft="離活動開始前"
+            app:txtRight="分鐘" />
+
+        <com.example.datemanager.RemindInfoView
+            android:id="@+id/repeatInfoView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:txtLeft="每過"
+            app:txtRight="分鐘通知一次" />
+    </LinearLayout>
+</merge>

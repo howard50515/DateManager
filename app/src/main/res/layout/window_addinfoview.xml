@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:layout_marginStart="1dp"
+    android:layout_marginTop="1dp"
+    android:layout_marginEnd="1dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="HardCodedText" >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:layout_weight="7" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/inputTitle"
+                android:layout_width="match_parent"
+                android:layout_height="80sp"
+                android:background="@drawable/background_border"
+                android:gravity="center"
+                android:hint="標題"
+                android:inputType="text" android:textSize="20sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="時間" android:textSize="20sp"
+                    android:gravity="center" />
+
+                <View
+                    android:id="@+id/aligned_view1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_centerHorizontal="true" />
+
+                <com.example.datemanager.AnimatedTextView
+                    android:id="@+id/txtDateStart"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/time"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_toStartOf="@id/aligned_view1"
+                    android:gravity="center"
+                    android:text="2023/07/11"
+                    android:textSize="20sp"
+                    app:background_unfocus="@drawable/background_rectangle_transparent_unfocus"
+                    app:background_focus="@drawable/background_rectangle_focus" />
+
+                <com.example.datemanager.AnimatedTextView
+                    android:id="@+id/txtDateEnd"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/time"
+                    android:layout_toEndOf="@id/aligned_view1"
+                    android:layout_alignParentEnd="true"
+                    android:text="2023/07/11" android:textSize="20sp"
+                    android:gravity="center"
+                    app:background_unfocus="@drawable/background_rectangle_transparent_unfocus"
+                    app:background_focus="@drawable/background_rectangle_focus" />
+                <com.example.datemanager.AnimatedTextView
+                    android:id="@+id/txtTimeStart"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/txtDateStart"
+                    android:layout_toStartOf="@id/aligned_view1"
+                    android:layout_alignParentStart="true"
+                    android:text="08:00" android:textSize="20sp"
+                    android:gravity="center"
+                    app:background_unfocus="@drawable/background_rectangle_transparent_unfocus"
+                    app:background_focus="@drawable/background_rectangle_focus" />
+
+                <com.example.datemanager.AnimatedTextView
+                    android:id="@+id/txtTimeEnd"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/txtDateEnd"
+                    android:layout_toEndOf="@id/aligned_view1"
+                    android:layout_alignParentEnd="true"
+                    android:text="09:00" android:textSize="20sp"
+                    android:gravity="center"
+                    app:background_unfocus="@drawable/background_rectangle_transparent_unfocus"
+                    app:background_focus="@drawable/background_rectangle_focus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_below="@id/txtDateStart"
+                    android:layout_alignTop="@id/txtDateStart"
+                    android:layout_alignBottom="@id/txtTimeStart"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:text="->"
+                    android:textSize="30sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/timeRollerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <com.example.datemanager.RollerView
+                    android:id="@+id/rollerViewLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/aligned_view5"
+                    android:layout_alignParentStart="true"
+                    app:scrollView="@id/scrollView"
+                    app:displayArray="HOURS" />
+
+                <View
+                    android:id="@+id/aligned_view5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:text=":" android:textSize="50sp"
+                    android:gravity="center" />
+
+                <com.example.datemanager.RollerView
+                    android:id="@+id/rollerViewRight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/aligned_view5"
+                    android:layout_alignParentEnd="true"
+                    app:scrollView="@id/scrollView"
+                    app:displayArray="MINUTES" />
+            </RelativeLayout>
+
+            <CalendarView
+                android:id="@+id/dateCalendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Switch
+                android:id="@+id/switchRemind"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/background_border"
+                android:checked="true"
+                android:text="提醒時間" android:textSize="20sp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <RelativeLayout
+                android:id="@+id/aligned_view4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_border" >
+
+                <View
+                    android:id="@+id/aligned_view2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/txtRemindMode" />
+
+                <TextView
+                    android:id="@+id/txtRemindMode"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_toStartOf="@id/aligned_view2"
+                    android:layout_alignParentStart="true"
+                    android:text="提醒模式" android:textSize="20sp"
+                    android:gravity="start|center" />
+
+                <Spinner
+                    android:id="@+id/spinnerRemindMode"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_toEndOf="@id/aligned_view2"
+                    android:layout_alignParentEnd="true"
+                    android:entries="@array/remind_mode" />
+
+                <com.example.datemanager.RemindModeView
+                    android:id="@+id/remindModeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtRemindMode"
+                    app:remindMode="REPEAT" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/txtRemark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="備註" android:textSize="20sp"
+                android:gravity="center" />
+
+            <EditText
+                android:id="@+id/inputRemark"
+                android:layout_width="match_parent"
+                android:layout_height="300sp"
+                android:background="@drawable/background_border"
+                android:inputType="text"
+                android:hint="新增備註" android:textSize="20sp"
+                android:gravity="top|start" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <View
+            android:id="@+id/aligned_view3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/aligned_view3"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/background_rectangle_unfocus"
+            app:backgroundTint="@null"
+            android:text="取消" android:textSize="20sp" android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btConfirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/aligned_view3"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/background_rectangle_unfocus"
+            app:backgroundTint="@null"
+            android:text="確認" android:textSize="20sp" android:textColor="@color/black"/>
+    </RelativeLayout>
+
+</LinearLayout>

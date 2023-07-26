@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/background_rectangle_unfocus"
+    app:backgroundTint="@null"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rectangle_transparent_unfocus"
+        app:backgroundTint="@null"
+        android:text="編輯" android:textSize="16sp" android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rectangle_transparent_unfocus"
+        app:backgroundTint="@null"
+        android:text="刪除" android:textSize="16sp" android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btCopy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rectangle_transparent_unfocus"
+        app:backgroundTint="@null"
+        android:text="複製" android:textSize="16sp" android:textColor="@color/black" />
+</LinearLayout>

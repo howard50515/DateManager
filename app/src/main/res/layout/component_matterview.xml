@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout"
+    tools:ignore="HardCodedText" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/txtTime"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtTopic"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/btMoreOption"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_rectangle_transparent_unfocus"
+        app:backgroundTint="@null"
+        android:text="..."
+        android:textColor="@color/black"
+        android:textSize="11sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/detailInfoView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/txtDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@id/aligned_view"
+            android:layout_alignBottom="@id/txtRemind"
+            android:text="2023/07/19 -> 2023/07/20"
+            android:gravity="center" />
+
+        <View
+            android:id="@+id/aligned_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@id/txtRemind"/>
+
+        <TextView
+            android:id="@+id/txtRemind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/aligned_view"
+            android:text="在活動開始前5分鐘提醒一次"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtRemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:layout_below="@id/aligned_view"
+            android:text="無備註"
+            android:gravity="center" />
+
+    </RelativeLayout>
+</merge>

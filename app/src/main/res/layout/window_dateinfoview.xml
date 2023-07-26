@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:layout_gravity="bottom"
+    android:layout_marginStart="1dp"
+    android:layout_marginTop="1dp"
+    android:layout_marginEnd="1dp"
+    android:background="@drawable/background_rectangle_radius_unfocus"
+    android:orientation="vertical"
+    tools:ignore="HardCodedText">
+
+    <TextView
+        android:id="@+id/dragText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/background_rectangle_radius_unfocus"
+        android:gravity="center"
+        android:text="=" android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/dragText"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/background_stroke_bottom"
+        android:text="7月5號的行程" android:textSize="20sp"
+        android:gravity="center" />
+
+    <com.example.datemanager.MyScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/txtDate"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp" >
+
+        <LinearLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.example.datemanager.MatterView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:txtTopic="我的活動"
+                app:txtTime="08:00" />
+
+            <com.example.datemanager.MatterView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:txtTopic="另一個活動"
+                app:txtTime="11:00" />
+
+        </LinearLayout>
+    </com.example.datemanager.MyScrollView>
+
+    <Button
+        android:id="@+id/btAdd"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background_circle_unfocus"
+        app:backgroundTint="@null"
+        android:text="+" android:textSize="30sp" android:textColor="@color/black"
+        android:gravity="center" />
+
+</RelativeLayout>

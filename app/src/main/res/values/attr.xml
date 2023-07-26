@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DateView">
+        <attr name="txtDate" format="string"/>
+        <attr name="txtReminder" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="MatterView">
+        <attr name="txtTime" format="string"/>
+        <attr name="txtTopic" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="RemindInfoView">
+        <attr name="txtLeft" format="string"/>
+        <attr name="txtRight" format="string"/>
+        <attr name="inputHint" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="RemindModeView">
+        <attr name="remindMode" format="enum">
+            <enum name="GENERAL" value="0"/>
+            <enum name="REPEAT" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="RollerView">
+        <attr name="displayArray" format="enum">
+            <enum name="HOURS" value="0"/>
+            <enum name="MINUTES" value="1"/>
+        </attr>
+        <attr name="scrollView" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="AnimatedTextView">
+        <attr name="background_unfocus" format="reference" />
+        <attr name="background_focus" format="reference" />
+    </declare-styleable>
+</resources>
